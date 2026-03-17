@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SKK Auto Locksmith</title>
+  <link rel="shortcut icon" href="Assets/Logo/SKK-favicon.png">
+  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="scrolling-backdrop"></div>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">
+        <a href="#landing"></a>
+      </div>        
+        <div class="nav-links mobile-hidden">
+            <a onclick="scrollToSection('about')">About Us</a>
+                    <!-- DROPDOWN MENU -->
+            <div class="dropdown">          
+              <a onclick="scrollToSection('services')" class="dropbtn">Services ▾</a>
+              <div class="dropdown-content">
+                <!-- Dropdown Menu items here -->
+              </div>
+            </div>              
+            <a onclick="scrollToSection('contact')">Contact Us</a>
+
+          </div>      
+          <label class="nav-links-dropdown-button mobile-show">
+            <input type="checkbox">
+          </label>
+          <aside class="sidebar mobile-show">
+            <div><a onclick="scrollToSection('about')">About Us</a></div>
+                    <!-- DROPDOWN MENU -->
+            <div class = "dropdown-mobile-nav">          
+              <a class="dropbtn-mobile-nav">Services ▾</a>
+              <div class="dropdown-content-mobile-nav">
+                <!-- Dropdown Menu items here -->
+              </div>
+            </div>              
+            <div><a onclick="scrollToSection('contact')">Contact Us</a></div>
+          </aside>
+    </div>
+  </nav>
+  
+  <div class = "wrapper">
+    
+    
+    <!-- LANDING SECTION -->
+    <section id="landing">
+        <section class="section-center" id = "landing-content">
+          <div class = "content-holder">
+            <div class = "landing-logo"></div>
+            <button class="btn" id="to-section-button" onclick="scrollToSection('services')">Our Services</button>
+            <button class="btn" id="to-section-button" onclick="scrollToSection('about')">Contact Us</button>
+          </div>
+        </section>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section-center"id="about">
+      <div class = "content-holder">
+        <h2>About Us</h2>
+        <p>
+        Skilled in many trades, Sean is a great egg.
+        </p>
+        <button class="btn" id="to-section-button" onclick="scrollToSection('services')">View Our Services</button>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="section-center"id="services">
+      <div class = "content-holder">
+        <h2>Our Services</h2>
+        <ul id="services-list">
+            <li> CUTTING </li>
+            <li> PROGRAMMING </li>
+            <li> DUPLICATING </li>
+            <li> EMERGENCY ACCESS </li>
+        </ul>
+        <button class="btn" id="to-section-button" onclick="scrollToSection('services')">Get A Quote</button>
+      </div>
+    </section>
+
+    <section class="section-center" id="contact">
+
+      <div class="contact-container">
+        <h1>Contact us</h1>
+        <form id="form" action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+          <!-- Honeypot -->
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+          <!-- Public Access Key -->
+          <input type="hidden" name="access_key" value="a73fa243-3867-46b7-b79f-40238791b8e5">
+
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="NAME (REQUIRED)" required autocomplete="on">
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="EMAIL (REQUIRED)" required autocomplete="on">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="SUBJECT" />          
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="YOUR MESSAGE TO US" required></textarea>
+
+          <input id="form-submit-button" type="submit">
+        </form>
+        <div id="submit-result" class="">
+          <p>PLACEHOLDER</p>
+        </div>
+      </div>      
+    </section>
+  </div>
+
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    window.onload = function() {
+      // Reset the form fields when the page loads
+      document.getElementById("form").reset();
+      const form = document.getElementById('form');
+      const result = document.getElementById('submit-result');
+      
+      //on submit, POST to web3Forms and get response
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+        result.innerHTML = "Please wait..."
+        //fetch result
+        fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {//show response
+                let json = await response.json();
+                console.log(json);
+                if (response.status == 200) {
+                    result.innerHTML = json.message;
+                    result.classList.add("submit-success");
+                } else {
+                    console.log(response);
+                    result.innerHTML = json.message;
+                    result.classList.add("submit-warning");
+      
+                }
+            })
+            .catch(error => {//show error
+                console.log(error);
+                result.innerHTML = "Something went wrong!";
+                result.classList.add("submit-error");
+      
+            })
+            .then(function() {//reset form
+                form.reset();
+                //make response dissapear after 3 seconds if you wish
+                setTimeout(() => {
+                  result.classList.remove("submit-warning" ,"submit-success", "submit-error")
+                }, 15000);
+            });
+      });
+
+    }
+  </script>
+</body>
+</html>

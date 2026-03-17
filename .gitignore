@@ -16,3 +16,32 @@ _site/
 # counterproductive to check this file into the repository.
 # Details at https://github.com/github/pages-gem/issues/768
 Gemfile.lock
+.vs/ProjectSettings.json
+.vs/skkautolocksmith.slnx/FileContentIndex/0e174395-8c6b-4786-ba67-7d1b505ed14e.vsidx
+.vs/skkautolocksmith.slnx/FileContentIndex/2cd3491b-5066-46b0-bbd7-a7f02d94872c.vsidx
+.vs/skkautolocksmith.slnx/FileContentIndex/4525023d-0ef0-4dc5-850d-2fa16cdd2067.vsidx
+.vs/skkautolocksmith.slnx/FileContentIndex/506bb992-5549-458c-bb51-4a4decf2600c.vsidx
+.vs/skkautolocksmith.slnx/FileContentIndex/7ef17df3-bd7f-4322-93cd-b99813ddc5d3.vsidx
+.vs/skkautolocksmith.slnx/v18/.wsuo
+.vs/skkautolocksmith.slnx/v18/DocumentLayout.json
+.vs/skkautolocksmith/CopilotIndices/18.0.991.28364/CodeChunks.db
+.vs/skkautolocksmith/CopilotIndices/18.0.991.28364/CodeChunks.db-shm
+.vs/skkautolocksmith/CopilotIndices/18.0.991.28364/CodeChunks.db-wal
+.vs/skkautolocksmith/CopilotIndices/18.0.991.28364/SemanticSymbols.db
+.vs/skkautolocksmith/CopilotIndices/18.0.991.28364/SemanticSymbols.db-shm
+.vs/skkautolocksmith/CopilotIndices/18.0.991.28364/SemanticSymbols.db-wal
+.vs/slnx.sqlite
+.vs/VSWorkspaceState.json
+.vs/skkautolocksmith.slnx/FileContentIndex/079a6a6a-1be0-43ba-8095-800ae6848ba4.vsidx
+.vs/slnx.sqlite-journal
+Assets/.vs/Assets.slnx/FileContentIndex/f5ce5cc1-d18b-4d52-86a4-a05bbfa80842.vsidx
+.vs/skkautolocksmith.slnx/FileContentIndex/1be54a97-861f-4e12-86d5-e0f5065b6b39.vsidx
+.vs/skkautolocksmith.slnx/FileContentIndex/6040239e-bca0-4e89-b42d-f5b7bb5d9d0b.vsidx
+.vs/skkautolocksmith.slnx/FileContentIndex/e9a69608-564a-41f4-9aba-df36615e7f19.vsidx
+Assets/.vs/Assets.slnx/v18/.wsuo
+Assets/.vs/Assets.slnx/v18/DocumentLayout.json
+Assets/.vs/Assets/CopilotIndices/18.0.991.28364/CodeChunks.db
+Assets/.vs/Assets/CopilotIndices/18.0.991.28364/SemanticSymbols.db
+Assets/.vs/ProjectSettings.json
+Assets/.vs/slnx.sqlite
+Assets/.vs/VSWorkspaceState.json
