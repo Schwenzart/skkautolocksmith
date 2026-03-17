@@ -1,10 +1,11 @@
 :root{
-    --red: #d02307;
-    --darkred: #c58b18;
-    --lightred: #fcbf47;
+    --red: rgba(207, 39, 11, 1);
+    --backdrop-red: rgba(207, 39, 11, 0.1);
+    --darkred: #740000;
+    --lightred: #c90000;
     --verylightred: #f3e0ba;
-    --black: rgb(5 7 10);
-    --blackAlpha: rgba(5 7 10 255);
+    --black: rgb(5, 7, 10);
+    --blackAlpha: rgba(5, 7, 10, 0.5);
     --lightgrey: #6c7a75;
     --greyblue: #4d646a;
     --white: #f3eee3;
@@ -61,6 +62,30 @@
       color: var(--red);
   }
 
+  .btn {
+    text-transform: uppercase;
+    color: var(--white);
+    margin: 10px auto;
+    width: 60%;
+    padding: 10px 0;
+    background: rgba(172, 0, 0, 0.3);
+    backdrop-filter: blur(20px);
+    box-shadow: #110e0860 0px 2px 3px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 1000;
+    transition: background .5s;
+  }
+
+  .btn:hover {
+      background: rgba(172, 0, 0, 0.671);
+  }
+
+
   .scrolling-backdrop{
       width:100%;
       height: 100%;
@@ -73,19 +98,19 @@
       content: "";      
       background-color: #0e0e21;
       background: url(Assets/Images/TilingKey.jpg) repeat;
-      background-size: 3%, cover;
+      background-size: 5%, cover;
       display: block;
       width: max(200cqh,200cqw);
       height: max(200cqh,200cqw);
       transform: scale(2) rotate(45deg);
       background-blend-mode: overlay;
-      animation: keyPatternScroll 5s linear infinite;   
+      animation: keyPatternScroll 10s linear infinite;   
       mix-blend-mode: overlay;
   }
 
   @keyframes keyPatternScroll{
       0%{transform: scale(2) rotate(45deg) translate(0,0)}
-      100%{transform: scale(2) rotate(45deg) translate(3%,0%)}
+      100%{transform: scale(2) rotate(45deg) translate(5%,0%)}
   }
 
   .landing-logo{
@@ -148,15 +173,18 @@
     position: relative;
   }
 
+  #form > textarea{
+    height: clamp(300px, 25vh, 25vh) !important;
+  }
   /* Style inputs with type="text", select elements and textareas */
-  input[type=text], input[type=email], select, textarea {
+  input[type=text], input[type=email], select, textarea{
     width: 100%;
-    height: clamp(30px, 60px, 8vh);
-    background-color: var(--black);
-    color: var(--white);
-    padding: 6px;
+    height: clamp(30px, 5vh, 50px);
+    background-color: var(--white);
+    color: var(--black);
     border: 1px solid #ccc;
     border-radius: 20px;
+
     box-sizing: border-box;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -176,7 +204,7 @@
   }
 
   input[type=text]::placeholder, input[type=email]::placeholder, select::placeholder, textarea::placeholder {
-    color: rgba(255, 255, 255, 0.1)
+    color: rgba(0, 0, 0, 0.3)
   }
   textarea{
     height: clamp(40px, 120px, 15vh);
@@ -187,7 +215,7 @@
   input[type=submit] {
     background-color: var(--black);
     color: var(--white);
-    font-size: clamp(.5rem, 2rem, .1rem + 4vw);
+    font-size: clamp(.3rem, 1.2rem, .1rem + 3vw);
     font-weight: 1000;
     text-transform: uppercase;
     padding: 8px 20px;
@@ -582,25 +610,7 @@
   }
 
 
-  .btn {
-    margin: 30px auto;
-    display: flex;
-    padding: 12px 25px;
-    background:var(--red);
-    box-shadow: #110e0860 0px 5px 3px, var(--verylightred) 0px -1px 3px;
-    color: var(--black);
-    border: none;
-    border-radius: 15px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-    z-index: 1000;
-  }
 
-  .btn:hover {
-      background: var(--lightred);
-  }
 
 
   /* --- DROPDOWN MENU --- */
@@ -910,27 +920,6 @@
     left:10px;
   }
 
-  .btn {
-    margin: 30px auto;
-    display: flex;
-    padding: 12px 25px;
-    background:var(--red);
-    box-shadow: #110e0860 0px 5px 3px, var(--verylightred) 0px -1px 3px;
-    color: var(--black);
-    border: none;
-    border-radius: 15px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-    z-index: 1000;
-    transition: background .5s;
-  }
-
-  .btn:hover {
-      background: var(--lightred);
-  }
-
   /* --- DROPDOWN MENU --- */
   .dropdown {
     position: relative;
@@ -1185,27 +1174,6 @@
     left:20px;
   }
 
-  .btn {
-    margin-top:30px;
-    display: flex;
-    padding: 12px 25px;
-    background:var(--red);
-    box-shadow: #110e0860 0px 5px 3px, var(--verylightred) 0px -1px 3px;
-    color: var(--black);
-    border: none;
-    border-radius: 15px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-    z-index: 1000;
-    transition: background .5s;
-  }
-
-  .btn:hover {
-      background: var(--lightred);
-  }
-
   /* --- DROPDOWN MENU --- */
   .dropdown {
     position: relative;
@@ -1455,26 +1423,6 @@
     position: absolute;
     bottom: 50px;
     left:20px;
-  }
-
-  .btn {
-    margin-top:50px;
-    display: flex;
-    padding: 12px 25px;
-    background:var(--red);
-    box-shadow: #110e0860 0px 5px 3px, var(--verylightred) 0px -1px 3px;
-    color: var(--black);
-    border: none;
-    border-radius: 15px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-    z-index: 1000;
-  }
-
-  .btn:hover {
-      background: var(--lightred);
   }
 
   /* --- DROPDOWN MENU --- */
