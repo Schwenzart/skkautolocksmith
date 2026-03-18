@@ -98,7 +98,7 @@
       content: "";      
       background-color: #0e0e21;
       background: url(Assets/Images/TilingKey.jpg) repeat;
-      background-size: 5%, cover;
+      background-size: 3.5%, cover;
       display: block;
       width: max(200cqh,200cqw);
       height: max(200cqh,200cqw);
@@ -110,7 +110,7 @@
 
   @keyframes keyPatternScroll{
       0%{transform: scale(2) rotate(45deg) translate(0,0)}
-      100%{transform: scale(2) rotate(45deg) translate(5%,0%)}
+      100%{transform: scale(2) rotate(45deg) translate(3.5%,0%)}
   }
 
   .landing-logo{
@@ -118,8 +118,8 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
-      width: clamp(50vw, 50vh, 80vw);
-      height: 50vh;
+      width: clamp(40vw, 40vh, 60vw);
+      height: 40vh;
   }
 
   .content-holder{
