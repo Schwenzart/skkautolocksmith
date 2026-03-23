@@ -1,5 +1,5 @@
 :root{
-    --orange: rgb(207, 89, 11);
+    --orange:rgb(216 53 8);
     --backdrop-orange: rgba(207, 39, 11, 0.1);
     --darkorange: #740000;
     --lightorange: #c90000;
@@ -71,7 +71,8 @@
     text-transform: uppercase;
     color: var(--white);
     margin: 5px auto;
-    width: 60%;
+    width: 100%;
+    max-width: 400px;
     padding: 10px 0;
     background: linear-gradient(0deg, rgb(226, 55, 32) 0%, rgb(218, 48, 5) 20%, rgb(214, 57, 9) 90%);
     backdrop-filter: blur(20px);
@@ -374,6 +375,7 @@
     font-size: calc(1rem + 1vw);
     font-weight: 1000;
     transition: .3s ease-in-out;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.425);
   }
 
   .sidebar> div:hover, .sidebar > div:active{
