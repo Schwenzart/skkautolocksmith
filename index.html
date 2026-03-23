@@ -17,14 +17,8 @@
         <a href="#landing"></a>
       </div>        
         <div class="nav-links mobile-hidden">
-            <a onclick="scrollToSection('about')">About Us</a>
-                    <!-- DROPDOWN MENU -->
-            <div class="dropdown">          
-              <a onclick="scrollToSection('services')" class="dropbtn">Services ▾</a>
-              <div class="dropdown-content">
-                <!-- Dropdown Menu items here -->
-              </div>
-            </div>              
+            <a onclick="scrollToSection('about')">About Us</a>  
+            <a onclick="scrollToSection('services')">Services</a>
             <a onclick="scrollToSection('contact')">Contact Us</a>
 
           </div>      
@@ -32,14 +26,9 @@
             <input type="checkbox">
           </label>
           <aside class="sidebar mobile-show">
-            <div><a onclick="scrollToSection('about')">About Us</a></div>
-                    <!-- DROPDOWN MENU -->
-            <div class = "dropdown-mobile-nav">          
-              <a class="dropbtn-mobile-nav">Services ▾</a>
-              <div class="dropdown-content-mobile-nav">
-                <!-- Dropdown Menu items here -->
-              </div>
-            </div>              
+            <div><a onclick="scrollToSection('about')">About Us</a></div>      
+            <div><a onclick="scrollToSection('services')">Services</a></div> 
+            <div><a onclick="scrollToSection('testimonials')">Testimonials</a></div>      
             <div><a onclick="scrollToSection('contact')">Contact Us</a></div>
           </aside>
     </div>
@@ -82,13 +71,22 @@
             <li> DUPLICATING </li>
             <li> EMERGENCY ACCESS </li>
         </ul>
-        <button class="btn" id="to-section-button" onclick="scrollToSection('services')">Get A Quote</button>
+        <button class="btn" id="to-section-button" onclick="scrollToSection('contact')">Get A Quote</button>
+      </div>
+    </section>
+
+        <!-- SERVICES SECTION -->
+    <section class="section-center"id="testimonials">
+      <div class = "content-holder">
+        <h2>Our Testimonials</h2>
+
+        <button class="btn" id="to-section-button" onclick="scrollToSection('contact')">Get A Quote</button>
       </div>
     </section>
 
     <section class="section-center" id="contact">
 
-      <div class="contact-container">
+      <div class="contact-container content-holder">
         <h1>Contact us</h1>
         <form id="form" action="https://api.web3forms.com/submit" method="POST" class="contact-form">
           <!-- Honeypot -->
