@@ -16,7 +16,7 @@
     --hamburger-gap: calc(var(--hamburger-height));
     --hamburger-total-height: var(--hamburger-width);
     --nav-anim-timing: .5s ease-in-out;
-    --font-family: "Lato", sans-serif;
+    --font-family: "Poppins", sans-serif;
 
     --mainLogo1K: url(Assets/Logo/Main-Logo-1K.png);
     --mainLogo1KdropShadow: url(Assets/Logo/Main-Logo-1K-DropShadow.png);
@@ -27,7 +27,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Lato", sans-serif;
+    font-family: var(--font-family);
   }
 
   html {
@@ -38,7 +38,7 @@
   body {
     width: 100vw;
     height: 100vh;
-    font-family: "Lato", sans-serif;
+    font-family: var(--font-family);
     color: #222;
     overflow: hidden;
 
@@ -80,7 +80,7 @@
     border-radius: 5px;
     border: none;
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: 800;
     cursor: pointer;
     transition: 0.3s;
     z-index: 1000;
@@ -129,6 +129,7 @@
       background-size: contain;
       width: clamp(40vw, 40vh, 60vw);
       height: 40vh;
+      margin: 0px auto 10px;
   }
 
   .content-holder{
@@ -136,20 +137,26 @@
 
     width: 95%;
     margin: 0 auto;
-    height: 50%;
+
     min-height: max-content;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-items: center;
-    align-content: center;
-    justify-content: center;
 
     padding: 20px;
     border-radius: 10px;
     background-color: var(--blackAlmostOpaque);
     
     box-shadow: 2px 0px 15px black, 0px 0px 10px rgba(241, 77, 1, 0.767), 0px 0px 5px rgb(0, 0, 0);
+  }
+
+  .justify-center {
+    justify-items: center;
+    justify-content: center;
+  }
+
+  .align-center{
+    align-items: center;
+    align-content: center;
   }
 
   #contact{
@@ -188,7 +195,7 @@
     font-size: calc(.2rem+3vw) ;
     color: var(--white);
     text-transform: uppercase;
-    font-weight: 1000;
+    font-weight: 500;
     left: 10px;
     margin: 5px 0;
     position: relative;
@@ -205,7 +212,6 @@
     color: var(--black);
     border: 1px solid #ccc;
     border-radius: 20px;
-
     box-sizing: border-box;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -213,7 +219,7 @@
     font-size: clamp(.3rem, 1.2rem, .1rem + 3vw);
     letter-spacing: normal;
     text-decoration: none;
-    font-weight: 1000;
+    font-weight: 300;
     text-transform: uppercase;
     min-height: 30px;
     padding-block: 5px;
@@ -225,7 +231,7 @@
   }
 
   input[type=text]::placeholder, input[type=email]::placeholder, select::placeholder, textarea::placeholder {
-    color: rgba(0, 0, 0, 0.3)
+    color: rgba(0, 0, 0, 0.45)
   }
   textarea{
     height: clamp(40px, 120px, 15vh);
@@ -237,7 +243,7 @@
     background-color: var(--white);
     color: var(--black);
     font-size: clamp(.3rem, 1.2rem, .1rem + 3vw);
-    font-weight: 1000;
+    font-weight: 800;
     text-transform: uppercase;
     padding: 8px 20px;
     border: none;
@@ -265,7 +271,7 @@
     background-color: var(--white);
     color: var(--black);
     font-size: clamp(.5rem, 2rem, .1rem + 4.4vw);
-    font-weight: 1000;
+    font-weight: 800;
     text-align: center;
     text-transform: uppercase;
     padding: 10px 20px;
@@ -373,7 +379,6 @@
     text-decoration: none;
     text-transform: uppercase;
     font-size: calc(1rem + 1vw);
-    font-weight: 1000;
     transition: .3s ease-in-out;
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.425);
   }
@@ -386,7 +391,6 @@
   }
 
   .sidebar > div:hover > a{
-    font-weight: 1000;
     margin-left: 10px;
   }
 
@@ -517,7 +521,6 @@
     font-style: bold;
     font-size: .5em;
     color: var(--white);
-    font-weight: 1000;
     transition: color 0.3s;
   }
 
@@ -605,15 +608,13 @@
     text-decoration: none;
     font-style: bold;
     color: var(--white);
-    font-weight: 1000;
     transition: color 0.3s;
   }
 
   #tag_line{
-      letter-spacing: .1em;
-      font-size: 1.5em;
-      font-weight: 100;
-      margin-bottom: max(10px, 4vh) !important;
+    letter-spacing: .1em;
+    font-size: 1.5em;
+    margin-bottom: max(10px, 4vh) !important;
   }
 
   .upper{
@@ -658,7 +659,6 @@
     font-style: bold;
     font-size: 1.5em;
     color: #e7dfc4;
-    font-weight: 1000;
     transition: color 0.3s;
   }
 
@@ -838,7 +838,6 @@
     font-style: bold;
     font-size: calc(.1rem + 1.5vw);
     color: var(--white);
-    font-weight: 1000;
     transition: color 0.3s;
   }
 
@@ -917,15 +916,13 @@
     text-decoration: none;
     font-style: bold;
     color: var(--white);
-    font-weight: 1000;
     transition: color 0.3s;
   }
 
   #tag_line{
-      letter-spacing: .1em;
-      font-size: 1.5em;
-      font-weight: 100;
-      margin-bottom: 20px;
+    letter-spacing: .1em;
+    font-size: 1.5em;
+    margin-bottom: 20px;
   }
 
 
@@ -964,7 +961,6 @@
     font-style: bold;
     font-size: 1.5em;
     color: #e7dfc4;
-    font-weight: 1000;
     transition: color 0.3s;
   }
 
@@ -1085,7 +1081,6 @@
     text-transform: uppercase;
     font-size: calc(1.5vw + 0.1rem);
     color: var(--white);
-    font-weight: 1000;
     transition: color 0.3s;
   }
 
@@ -1169,7 +1164,6 @@
     text-decoration: none;
     font-style: bold;
     color: var(--white);
-    font-weight: 1000;
     transition: color 0.3s;
   }
 
@@ -1177,7 +1171,6 @@
       letter-spacing: .3rem;
       font-size: calc(.3vw + .5rem) !important ; 
       text-align: center !important;
-      font-weight: 100;
       margin-bottom: 15px;
   }
 
@@ -1215,7 +1208,6 @@
     font-style: bold;
     font-size: 1.5em;
     color: #e7dfc4;
-    font-weight: 1000;
     transition: color 0.3s;
   }
 
@@ -1333,7 +1325,6 @@
     font-style: bold;
     font-size: calc(.5vw + 1rem);
     color: var(--white);
-    font-weight: 1000;
     transition: color 0.3s;
   }
 
@@ -1417,7 +1408,6 @@
     text-decoration: none;
     font-style: bold;
     color: var(--white);
-    font-weight: 1000;
     transition: color 0.3s;
   }
 
@@ -1425,7 +1415,6 @@
       letter-spacing: .5rem;
       font-size: calc(1.1vw + .1rem) !important; 
       text-align: center !important;
-      font-weight: 100;
       margin-bottom: 25px;
   }
 
@@ -1463,7 +1452,6 @@
     font-style: bold;
     font-size: 1.5em;
     color: #e7dfc4;
-    font-weight: 1000;
     transition: color 0.3s;
   }
 
