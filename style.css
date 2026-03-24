@@ -126,6 +126,46 @@
       100%{transform: scale(2) rotate(45deg) translate(3.5%,0%)}
   }
 
+  #services-list{
+    font-size: clamp(.6rem, .1rem + 2.5vw, 1rem);
+    margin: 0 !important;
+    padding: 0 20px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  #services-list li:last-child{
+    font-size: clamp(.9rem, .1rem + 2.5vw, 1.5rem);
+    font-weight: 800;
+    text-align: center;
+    list-style: none;
+    margin-top: 15px !important;
+  }
+
+  li{
+    list-style: decimal;
+    text-align: left;
+    margin: 0 !important;
+    list-style-image: url(Assets/Images/ListKey.png);
+    list-style-position: inside;
+  }
+
+  li::marker{
+    font-size: clamp(.6rem, .1rem + 2.5vw, 1rem);
+  }
+
+  /* li::before{
+    content: '';
+    display: inline-block;
+    aspect-ratio: 3 / 2;
+    height: auto;
+    width: clamp(1.2rem, .1rem + 5vw, 2rem);
+    background-image: url(Assets/Images/ListKey.png);
+    background-position: center;
+    background-size: cover;
+    transform: translate(-10px, 3px);
+  } */
+
   .landing-logo{
       background-image: var(--mainLogo1KdropShadow);
       background-repeat: no-repeat;
@@ -179,6 +219,7 @@
   }
 
   .content-holder p {
+    font-size: clamp(.7rem, .1rem + 2.4vw, 1rem);
     margin-top: 10px;
     margin-bottom: 10px;
   }
@@ -889,6 +930,7 @@
       position: relative;
       height: 100%;
       width: 100%;
+      min-height: max-content;
       display: flex;
       flex-direction: column;
       transform-style: preserve-3d;
@@ -1122,9 +1164,9 @@
 
   section{
       position: relative;
-      min-height: 95vh;
       height: 100%;
       width: 100%;
+      min-height: max-content;
       display: flex;
       flex-direction: column;
       transform-style: preserve-3d;
